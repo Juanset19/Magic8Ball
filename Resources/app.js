@@ -1,64 +1,69 @@
-// this sets the background color of the master UIView (when there are no windows/tab groups on it)
-Titanium.UI.setBackgroundColor('#000');
+/**
+ * Magic 8 Ball Project
+ * Proyecto Bola 8 Mágica
+ */
 
-// create tab group
-var tabGroup = Titanium.UI.createTabGroup();
-
-
-//
-// create base UI tab and root window
-//
-var win1 = Titanium.UI.createWindow({  
-    title:'Tab 1',
-    backgroundColor:'#fff'
-});
-var tab1 = Titanium.UI.createTab({  
-    icon:'KS_nav_views.png',
-    title:'Tab 1',
-    window:win1
+/**
+ * Let's create a window
+ * Creemos una ventana
+ */
+var window = Titanium.UI.createWindow({
+	backgroundColor: 'white',
+	tittle:'Magic 8 Ball'
 });
 
-var label1 = Titanium.UI.createLabel({
-	color:'#999',
-	text:'I am Window 1',
-	font:{fontSize:20,fontFamily:'Helvetica Neue'},
-	textAlign:'center',
-	width:'auto'
+
+/**
+ * Let's create a button with an image of a Magic 8 Ball
+ * Creemos un botón con una imagen de la Bola 8 Mágica
+ */
+var button = Titanium.UI.createButton({
+	//backgroundImage: '/home/juansebastian/Titanium_Studio_Workspace/Magic\ 8\ Ball/Magic\ 8\ Ball.jpg',
+	title: 'Pregunta y te lo digo',
+	width: 300,
+	height: 90
 });
 
-win1.add(label1);
+/**
+ * The array of messages
+ * El arreglo de mensajes
+ */
+var messages = ['En mi opinión, sí','Es cierto','Es decididamente así','Probablemente','Buen Pronóstico',
+				'Todo apunta a que sí', 'Sin duda','Sí','Sí - definitivamente','Debes confiar en ello',
+				'Respuesta vaga, vuelve a intentarlo','Pregunta en otro moment','Será mejor que no te lo diga ahora',
+				'No puedo predecirlo ahora','Concéntrate y vuelve a preguntar','No cuentes con ello',
+				'Mi respuesta es no','Mis fuentes me dicen que no','Las perspectivas no son buenas',
+				'Muy dudoso'];
+		
+/**
+ * Let's get a number between 1 and 20
+ * Obtengamos un número entre 1 y 20
+ * 
+ * URI|Fuente:http://developer.appcelerator.com/question/4521/generate-random-number
+ */		
+function randomXToY(minVal,maxVal)
+{ 
+	var randVal = minVal+(Math.random()*(maxVal-minVal)); 
+	return Math.round(randVal);
+};
 
-//
-// create controls tab and root window
-//
-var win2 = Titanium.UI.createWindow({  
-    title:'Tab 2',
-    backgroundColor:'#fff'
+/**
+ * Let's add an event listener for clicking the button
+ * Añadamos un evento para cuando clickeen el botón
+ */
+button.addEventListener('click',function(e){
+	alert(messages[randomXToY(1,20)]);
 });
-var tab2 = Titanium.UI.createTab({  
-    icon:'KS_nav_ui.png',
-    title:'Tab 2',
-    window:win2
-});
-
-var label2 = Titanium.UI.createLabel({
-	color:'#999',
-	text:'I am Window 2',
-	font:{fontSize:20,fontFamily:'Helvetica Neue'},
-	textAlign:'center',
-	width:'auto'
-});
-
-win2.add(label2);
 
 
+/**
+ * Let's add the button to the window
+ * Añadamos el botón a la ventana
+ */
+window.add(button);
 
-//
-//  add tabs
-//
-tabGroup.addTab(tab1);  
-tabGroup.addTab(tab2);  
-
-
-// open tab group
-tabGroup.open();
+/**
+ * Let's open the window
+ * Abramos la ventana
+ */
+window.open();

@@ -4,6 +4,22 @@ Author: Juan Sebastian Trujillo Valencia - Juanset
 
 -----------------------03 de Junio/2013-----------------------
 
+(00:50) Creación del proyecto Magic 8 Ball - Juanset
+
+	Se crea el Script para que al dar click en un botón, el SmartPhone responda basado en las
+	respuestas de la Bola 8 Mágica encontradas en: http://es.wikipedia.org/wiki/Magic_8-Ball
+	
+	Las respuesta salen por un método random, encontrado en:http://developer.appcelerator.com/question/4521/generate-random-number
+	
+	El método es: 
+	
+	function randomXToY(minVal,maxVal)
+	{ 
+		var randVal = minVal+(Math.random()*(maxVal-minVal)); 
+		return Math.round(randVal);
+	};
+
+
 (00:18) Setup del proeycto - Juanset
 
-	Se confirgurá el proyecto Magic 8 Ball y se crea un repositorio en GitHub
+	Se configura el proyecto Magic 8 Ball y se crea un repositorio en GitHub
