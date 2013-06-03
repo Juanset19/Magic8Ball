@@ -4,6 +4,6 @@ Author: Juan Sebastian Trujillo Valencia - Juanset
 
 -----------------------03 de Junio/2013-----------------------
 
-() Setup del proeycto - Juanset
+(00:18) Setup del proeycto - Juanset
 
 	Se confirgurá el proyecto Magic 8 Ball y se crea un repositorio en GitHub
