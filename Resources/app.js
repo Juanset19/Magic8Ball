@@ -9,7 +9,7 @@
  */
 var window = Titanium.UI.createWindow({
 	backgroundColor: 'white',
-	tittle:'Magic 8 Ball'
+	title:'Magic 8 Ball'
 });
 
 
@@ -18,10 +18,10 @@ var window = Titanium.UI.createWindow({
  * Creemos un botón con una imagen de la Bola 8 Mágica
  */
 var button = Titanium.UI.createButton({
-	//backgroundImage: '/home/juansebastian/Titanium_Studio_Workspace/Magic\ 8\ Ball/Magic\ 8\ Ball.jpg',
+	backgroundImage: 'images/Magic 8 Ball.jpg',
 	title: 'Pregunta y te lo digo',
 	width: 300,
-	height: 90
+	height: 500
 });
 
 /**
