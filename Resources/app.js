@@ -9,20 +9,23 @@
  */
 var window = Titanium.UI.createWindow({
 	backgroundColor: 'white',
-	title:'Magic 8 Ball'
+	title:'Hola'
 });
 
 
 /**
- * Let's create a button with an image of a Magic 8 Ball
- * Creemos un botón con una imagen de la Bola 8 Mágica
+ * Let's create a label with an image of a Magic 8 Ball
+ * Creemos una etiqueta con una imagen de la Bola 8 Mágica
  */
-var button = Titanium.UI.createButton({
+var label = Titanium.UI.createLabel({
 	backgroundImage: 'images/Magic 8 Ball.jpg',
-	title: 'Pregunta y te lo digo',
+	text: 'Pregunta y te lo digo',
+	font: {fontSize : 25},
+	color: 'red',
 	width: 300,
 	height: 500
 });
+
 
 /**
  * The array of messages
@@ -51,16 +54,22 @@ function randomXToY(minVal,maxVal)
  * Let's add an event listener for clicking the button
  * Añadamos un evento para cuando clickeen el botón
  */
-button.addEventListener('click',function(e){
-	alert(messages[randomXToY(1,20)]);
+label.addEventListener('click',function(e){
+	setTimeout(function(){
+		label.text=messages[randomXToY(0,19)]
+	},3000);
+	setTimeout(function(){
+		label.text='Pregunta y te lo digo'
+	},2000);
 });
 
 
 /**
- * Let's add the button to the window
- * Añadamos el botón a la ventana
+ * Let's add the label to the window
+ * Añadamos la etiqueta a la ventana
  */
-window.add(button);
+window.add(label);
+
 
 /**
  * Let's open the window
